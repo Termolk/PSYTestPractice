@@ -1,0 +1,26 @@
+unit ValidateMail;
+
+interface
+uses
+  Vcl.ComCtrls, SysUtils, Dialogs, System.RegularExpressions, sEdit;
+
+
+procedure CheckValidMail(Email: TsEdit);
+
+implementation
+
+procedure CheckValidMail(Email: TsEdit);
+var
+  IsValidEmail: Boolean;
+begin
+  IsValidEmail := TRegEx.IsMatch(Email.Text,
+    '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$');
+  if not IsValidEmail then
+  begin
+    ShowMessage('Пожалуйста, введите корректный адрес электронной почты.');
+    Exit;
+  end;
+end;
+
+
+end.

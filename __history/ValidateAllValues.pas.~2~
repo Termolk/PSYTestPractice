@@ -1,0 +1,17 @@
+unit ValidateAllValues;
+
+interface
+
+uses
+  ValidateMail, sEdit;
+
+procedure ValidateAllValue(Email: TsEdit);
+
+implementation
+
+procedure ValidateAllValue(Email: TsEdit);
+begin
+  ValidateMail(Email);
+end;
+
+end.

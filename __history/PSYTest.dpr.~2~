@@ -1,0 +1,15 @@
+program PSYTest;
+
+uses
+  Vcl.Forms,
+  UnitMain in 'UnitMain.pas' {FormMain},
+  UnitHideTabs in 'UnitHideTabs.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormMain, FormMain);
+  Application.Run;
+end.

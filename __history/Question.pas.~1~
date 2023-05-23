@@ -1,0 +1,21 @@
+unit Question;
+
+interface
+
+type
+  TQuestions = class(TObject)
+  public
+    const
+      Questions: array [0..4] of string =
+      (
+      'Question 1',
+      'Question 2',
+      'Question 3',
+      'Question 4',
+      'Question 5'
+      );
+  end;
+
+implementation
+
+end.

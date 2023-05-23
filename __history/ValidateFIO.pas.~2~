@@ -1,0 +1,51 @@
+unit ValidateFIO;
+
+interface
+
+uses
+  sEdit, Dialogs;
+
+function CheckValidFIO(Name: TsEdit; Surname: TsEdit; Patronymic: TsEdit): Boolean;
+
+implementation
+
+function CheckValidFIO(Name: TsEdit; Surname: TsEdit; Patronymic: TsEdit): Boolean;
+var
+  IsValidName, IsValidSurname, IsValidPatronomic: Boolean;
+begin
+if not (Length(Name.Text) > 1) and (Pos(' ', Name.Text) = 0) then
+begin
+  IsValidName:= False;
+  ShowMessage('Пожалуйста, введите корректное имя');
+end
+else
+begin
+  IsValidName:= True;
+end;
+
+
+if not (Length(Surname.Text) > 1) and (Pos(' ', Surname.Text) = 0) then
+begin
+  IsValidSurname:= False;
+  ShowMessage('Пожалуйста, введите корректную фамилию');
+end
+else
+begin
+  IsValidSurname:= True;
+end;
+
+if not (Length(Patronymic.Text) > 1) or (Pos(' ', Patronymic.Text) = 0) then
+begin
+  IsValidPatronomic:= False;
+  ShowMessage('Пожалуйста, введите корректное отчество, если его нет, то ничего не указывайте');
+end
+else
+begin
+  IsValidPatronomic:= True;
+end;
+
+Result:= (IsValidName and IsValidSurname and IsValidPatronomic);
+
+
+end;
+end.

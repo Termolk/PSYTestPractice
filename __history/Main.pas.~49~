@@ -1,0 +1,136 @@
+unit Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, sPageControl,
+  Vcl.StdCtrls, sButton, sEdit, sSkinManager, sSkinProvider,
+  HideTabs, ValidateAllValues, Test, sGroupBox, SetActivePage, sRadioButton,
+  sLabel, ShowResult;
+
+type
+  TFormMain = class(TForm)
+
+    // поля формы
+    PageMain: TsPageControl;
+
+    TabSheetWelcome: TsTabSheet;
+    TabSheetTest: TsTabSheet;
+    TabSheetResults: TsTabSheet;
+
+    SkinManager: TsSkinManager;
+    SkinProvider: TsSkinProvider;
+
+
+    // поля страницы регистрации
+    EditName: TsEdit;
+    EditSurname: TsEdit;
+    EditPatronymic: TsEdit;
+    EditMail: TsEdit;
+
+    LabelName: TsLabel;
+    LabelSurname: TsLabel;
+    LabelPatron: TsLabel;
+    LabelMail: TsLabel;
+
+    ButtonNavToTest: TsButton;
+
+
+    // поля страницы тестирования
+    LabelQuestion: TsLabel;
+    RgrpOptions: TsRadioGroup;
+    ButtonNextQuest: TsButton;
+
+
+    // поля страницы с результатами
+    LabelResult: TsLabel;
+    ButtonExit: TsButton;
+
+    procedure FormCreate(Sender: TObject);
+    procedure ButtonNavToTestClick(Sender: TObject);
+    procedure ButtonNextQuestClick(Sender: TObject);
+    procedure ButtonExitClick(Sender: TObject);
+    procedure FormCanResize(Sender: TObject; var NewWidth, NewHeight: Integer;
+      var Resize: Boolean);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+    FHasShown: Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  Test: TTest;
+  FormMain: TFormMain;
+  TestStartTime: TDateTime;
+
+implementation
+
+{$R *.dfm}
+
+
+
+procedure TFormMain.FormCreate(Sender: TObject);
+begin
+  HideTabButtons(PageMain);
+  Test := TTest.Create(EditName.Text, EditSurname.Text, EditPatronymic.Text, EditMail.Text);
+  LabelQuestion.Caption:= Test.GetNextQuestion;
+  FHasShown := False;
+end;
+
+procedure TFormMain.FormShow(Sender: TObject);
+begin
+  FHasShown := True;
+end;
+
+procedure TFormMain.FormCanResize(Sender: TObject; var NewWidth,
+  NewHeight: Integer; var Resize: Boolean);
+begin
+  if FHasShown then
+    Resize := False;
+end;
+
+
+
+
+procedure TFormMain.ButtonNavToTestClick(Sender: TObject);
+begin
+  ValidateAllValue(PageMain, EditName, EditSurname, EditPatronymic, EditMail);
+  Test := TTest.Create(EditName.Text, EditSurname.Text, EditPatronymic.Text, EditMail.Text);
+end;
+
+
+procedure TFormMain.ButtonNextQuestClick(Sender: TObject);
+var
+  Score: Integer;
+begin
+  if rgrpOptions.ItemIndex >= 0 then
+  begin
+    Test.SaveAnswer(rgrpOptions.ItemIndex);
+
+    if Test.TestFinished then
+    begin
+      Test.EndTest;
+      Score := Test.GetTotalScore;
+      LabelResult.Caption:= ShowResults(Score);
+      SetCurrentPage(PageMain, 2);
+      Test.SaveResults('Результаты тестирования.txt');
+    end
+    else
+      LabelQuestion.Caption := Test.GetNextQuestion;
+
+    RgrpOptions.ItemIndex := -1;
+  end
+  else
+    ShowMessage('Пожалуйста, выберите один из вариантов ответа.');
+end;
+
+procedure TFormMain.ButtonExitClick(Sender: TObject);
+begin
+  Close;
+end;
+
+
+end.

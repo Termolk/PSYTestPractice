@@ -1,0 +1,19 @@
+unit Capitaliz;
+
+interface
+uses
+  SysUtils;
+
+function Capitalize(Str: string): string;
+
+implementation
+
+function Capitalize(Str: string): string;
+begin
+  if Str = '' then
+    Result := ''
+  else
+    Result := UpperCase(Str[1]) + LowerCase(Copy(Str, 2, MaxInt));
+end;
+
+end.

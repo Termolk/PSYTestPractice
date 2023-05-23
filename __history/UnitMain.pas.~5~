@@ -1,0 +1,43 @@
+unit UnitMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, sPageControl,
+  Vcl.StdCtrls, sButton, sEdit, sSkinManager,
+  UnitHideTabs;
+
+type
+  TFormMain = class(TForm)
+    EditName: TsEdit;
+    EditMail: TsEdit;
+    EditPatronymic: TsEdit;
+    EditSurname: TsEdit;
+    ButtonNavToDescription: TsButton;
+    PageMain: TsPageControl;
+    TabSheetWelcome: TsTabSheet;
+    TabSheetDescription: TsTabSheet;
+    TabSheetTest: TsTabSheet;
+    TabSheetResults: TsTabSheet;
+    sSkinManager1: TsSkinManager;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormMain: TFormMain;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormMain.FormCreate(Sender: TObject);
+begin
+HideTabButtons(PageMain);
+end;
+
+end.

@@ -1,0 +1,32 @@
+unit ShowResult;
+
+interface
+
+uses
+  SysUtils;
+
+function ShowResults(Score: Integer): String;
+
+implementation
+
+function ShowResults(Score: Integer): String;
+var
+  ResultText: string;
+begin
+  if Score < -30 then
+    ResultText := 'Вы слишком осторожны. Будьте раскованней'
+  else if (Score >= -30) and (Score < 10) then
+    ResultText := 'У Вас средние значения. Но вы склонны быть осторожным'
+  else if (Score >= -10) and (Score <= 10) then
+    ResultText := 'У Вас средние значения. Отклонений нет'
+    else if (Score > 10) and (Score <= 20) then
+    ResultText := 'У Вас средние значения. Но вы склонны быть рискованным'
+  else if Score > 20 then
+    ResultText := 'Вы сильно склонны к риску. Будьте менее раскованным'
+  else
+    ResultText := 'Ошибка при расчета теста.';
+
+  Result := Format('Результат тестирования: %d. %s', [Score, ResultText]);
+end;
+
+end.

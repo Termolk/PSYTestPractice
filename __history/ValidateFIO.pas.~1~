@@ -1,0 +1,24 @@
+unit ValidateFIO;
+
+interface
+
+uses
+  sEdit;
+
+function CheckValidFIO(Name: TsEdit; Surname: TsEdit; Patronymic: TsEdit): Boolean;
+
+implementation
+
+function CheckValidFIO(Name: TsEdit; Surname: TsEdit; Patronymic: TsEdit): Boolean;
+var
+  IsValidName, IsValidSurname, IsValidPatronomic: Boolean;
+begin
+if (Length(Name.Text) > 1) and (Pos(' ', Name.Text) = 0) then
+begin
+
+end;
+
+
+
+end;
+end.

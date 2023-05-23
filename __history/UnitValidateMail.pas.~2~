@@ -1,0 +1,22 @@
+unit UnitValidateMail;
+
+interface
+uses
+  Vcl.ComCtrls;
+
+
+function CheckValidMail(Email: string): Boolean;
+
+implementation
+
+function CheckValidMail(Email: string): Boolean;
+var
+  AtPos, DotPos: Integer;
+begin
+  AtPos := Pos('@', Email);
+  DotPos := Pos('.', Email);
+  Result := (AtPos > 0) and (DotPos > AtPos);
+end;
+
+
+end.

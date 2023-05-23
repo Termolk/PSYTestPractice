@@ -1,0 +1,108 @@
+unit Test;
+
+interface
+
+uses
+  Question, Classes, SysUtils, ShowResult;
+
+type
+  TTest = class(TObject)
+  private
+    FQuestionIndex: Integer;
+    FAnswers: array of Integer;
+    FName, FSurname, FPatronymic, FEmail: string;
+  public
+    constructor Create(const Name, Surname, Patronymic, Email: string);
+    function GetNextQuestion: string;
+    procedure SaveAnswer(AnswerIndex: Integer);
+    function GetTotalScore: Integer;
+    function TestFinished: Boolean;
+    procedure SaveResults(const FileName: string);
+  end;
+
+implementation
+
+constructor TTest.Create(const Name, Surname, Patronymic, Email: string);
+begin
+  FQuestionIndex := 0;
+  FName := Name;
+  FSurname := Surname;
+  FPatronymic := Patronymic;
+  FEmail := Email;
+  SetLength(FAnswers, Length(TQuestions.Questions));
+end;
+
+function TTest.GetNextQuestion: string;
+begin
+  if FQuestionIndex < Length(TQuestions.Questions) then
+    Result := TQuestions.Questions[FQuestionIndex]
+  else
+    Result := '';
+end;
+
+procedure TTest.SaveAnswer(AnswerIndex: Integer);
+var
+  Score: Integer;
+begin
+  if (FQuestionIndex < Length(TQuestions.Questions)) and (AnswerIndex >= 0) and (AnswerIndex <= 4) then
+  begin
+    case AnswerIndex of
+      0: Score := 2;
+      1: Score := 1;
+      2: Score := 0;
+      3: Score := -1;
+      4: Score := -2;
+    else
+      Score := 0;
+    end;
+    FAnswers[FQuestionIndex] := Score;
+    Inc(FQuestionIndex);
+  end;
+end;
+
+function TTest.GetTotalScore: Integer;
+var
+  I, Total: Integer;
+begin
+  Total := 0;
+  for I := 0 to High(FAnswers) do
+    Total := Total + FAnswers[I];
+  Result := Total;
+end;
+
+function TTest.TestFinished: Boolean;
+begin
+  Result := FQuestionIndex >= Length(TQuestions.Questions);
+end;
+
+procedure TTest.SaveResults(const FileName: string);
+var
+  I: Integer;
+  Results: TStringList;
+  FIO: string;
+begin
+  Results := TStringList.Create;
+  try
+    if FileExists(FileName) then
+      Results.LoadFromFile(FileName);
+
+    FIO := Format('%s %s %s', [FSurname, FName, FPatronymic]);
+    if FPatronymic = '' then
+      FIO := Format('%s %s - нет отчества', [FSurname, FName]);
+
+    Results.Add('Испытуемый: ' + FIO);
+    Results.Add('Почта: ' + FEmail);
+    Results.Add('Вопрос: оценка за вопрос');
+    for I := 0 to High(FAnswers) do
+      Results.Add(Format('Вопрос %d: %d', [I + 1, FAnswers[I]]));
+
+    Results.Add(ShowResults(GetTotalScore));
+    Results.Add('---');
+    Results.SaveToFile(FileName);
+  finally
+    Results.Free;
+  end;
+end;
+
+end.
+

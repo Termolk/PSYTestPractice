@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.761,C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas=C:\Users\ACER-PC\Desktop\PSYTest\UnitValidateMail.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.997,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.856,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.887,C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas=C:\Users\ACER-PC\Desktop\PSYTest\ValidateAllValues.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.358,C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas=C:\Users\ACER-PC\Desktop\PSYTest\ValidateFIO.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.578,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.866,C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas=C:\Users\ACER-PC\Desktop\PSYTest\SetActivePage.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.633,C:\Users\ACER-PC\Desktop\PSYTest\UnitMain.pas=C:\Users\ACER-PC\Desktop\PSYTest\Main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.633,C:\Users\ACER-PC\Desktop\PSYTest\UnitMain.dfm=C:\Users\ACER-PC\Desktop\PSYTest\Main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.257,C:\Users\ACER-PC\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\ACER-PC\Documents\Embarcadero\Studio\Projects\UnitMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.104,C:\Users\ACER-PC\Documents\Embarcadero\Studio\Projects\UnitMain.pas=C:\Users\ACER-PC\Desktop\PSYTest\UnitMain.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.758,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.902,C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas=C:\Users\ACER-PC\Desktop\PSYTest\UnitHideTabs.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.047,C:\Users\ACER-PC\Desktop\PSYTest\Question.pas=C:\Users\ACER-PC\Desktop\PSYTest\Questions.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.257,C:\Users\ACER-PC\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\ACER-PC\Documents\Embarcadero\Studio\Projects\UnitMain.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.810,=C:\Users\ACER-PC\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.860,C:\Users\ACER-PC\Desktop\PSYTest\Questions.pas=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.038,C:\Users\ACER-PC\Desktop\PSYTest\Test.pas=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.696,C:\Users\ACER-PC\Desktop\PSYTest\ShowResult.pas=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.931,C:\Users\ACER-PC\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\ACER-PC\Desktop\PSYTest\PSYTest.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.455,C:\Users\ACER-PC\Desktop\PSYTest\UnitValidateMail.pas=C:\Users\ACER-PC\Desktop\PSYTest\ValidateMail.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.630,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.053,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.869,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.885,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.104,C:\Users\ACER-PC\Documents\Embarcadero\Studio\Projects\UnitMain.dfm=C:\Users\ACER-PC\Desktop\PSYTest\UnitMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.172,C:\Users\ACER-PC\Desktop\PSYTest\UnitHideTabs.pas=C:\Users\ACER-PC\Desktop\PSYTest\HideTabs.pas</Transaction>
+    <Transaction>2023.05.17 14:12:53.609,=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+    <Transaction>2023.05.17 14:13:09.897,C:\Users\ACER-PC\Desktop\PSYTest\Capitaliz.pas=C:\Users\ACER-PC\Desktop\PSYTest\Unit1.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="HideTabs.pas"/>
+    <File Path="Main.pas"/>
+    <File Path="Main.dfm"/>
+    <File Path="ValidateMail.pas"/>
+    <File Path="ValidateAllValues.pas"/>
+    <File Path="SetActivePage.pas"/>
+    <File Path="ValidateFIO.pas"/>
+    <File Path="Test.pas"/>
+    <File Path="Question.pas"/>
+    <File Path="ShowResult.pas"/>
+    <File Path="Capitaliz.pas"/>
+  </ProjectSortOrder>
+</BorlandProject>

@@ -1,0 +1,21 @@
+unit ValidateAllValues;
+
+interface
+
+uses
+  ValidateMail, sEdit, Vcl.ComCtrls, sPageControl;
+
+procedure ValidateAllValue(PageControl: TsPageControl; Email: TsEdit);
+
+implementation
+
+procedure ValidateAllValue(PageControl: TsPageControl; Email: TsEdit);
+begin
+  if (CheckValidMail(Email)) then
+  begin
+    PageControl.ActivePage:= PageControl.Pages[1];
+  end;
+
+end;
+
+end.

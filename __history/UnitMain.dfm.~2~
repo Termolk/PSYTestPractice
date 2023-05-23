@@ -1,0 +1,88 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'FormMain'
+  ClientHeight = 441
+  ClientWidth = 715
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PageMain: TsPageControl
+    Left = 0
+    Top = 0
+    Width = 529
+    Height = 393
+    ActivePage = TabSheetWelcome
+    TabOrder = 0
+    object TabSheetWelcome: TsTabSheet
+      Caption = 'TabSheetWelcome'
+      ExplicitHeight = 229
+      object sButton1: TsButton
+        Left = 209
+        Top = 129
+        Width = 75
+        Height = 25
+        Caption = 'sButton1'
+        TabOrder = 0
+      end
+      object EditName: TsEdit
+        Left = 56
+        Top = 48
+        Width = 121
+        Height = 21
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+        TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1080#1084#1103
+      end
+      object EditMail: TsEdit
+        Left = 209
+        Top = 88
+        Width = 121
+        Height = 21
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+        TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1087#1086#1095#1090#1091
+      end
+      object EditPatronymic: TsEdit
+        Left = 56
+        Top = 131
+        Width = 121
+        Height = 21
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 3
+        TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1086#1090#1095#1077#1089#1090#1074#1086
+      end
+      object EditSurname: TsEdit
+        Left = 56
+        Top = 88
+        Width = 121
+        Height = 21
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 4
+        TextHint = #1042#1074#1077#1076#1080#1090#1077' '#1092#1072#1084#1080#1083#1080#1102
+      end
+    end
+    object TabSheetDescription: TsTabSheet
+      Caption = 'TabSheetDescription'
+      ExplicitHeight = 229
+    end
+    object TabSheetTest: TsTabSheet
+      Caption = 'TabSheetTest'
+      ExplicitHeight = 229
+    end
+    object TabSheetResults: TsTabSheet
+      Caption = 'TabSheetResults'
+      ExplicitHeight = 229
+    end
+  end
+end

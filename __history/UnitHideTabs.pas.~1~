@@ -1,0 +1,24 @@
+unit UnitHideTabs;
+
+interface
+
+uses
+  Vcl.ComCtrls;
+
+procedure HideTabButtons(PageControl: TPageControl);
+
+implementation
+
+procedure HideTabButtons(PageControl: TPageControl);
+var
+  I: Integer;
+begin
+  for I := 0 to PageControl.PageCount - 1 do
+  begin
+    PageControl.Pages[I].TabVisible := False;
+    PageControl.Pages[I].Width := 0;
+    PageControl.Pages[I].Caption := '';
+  end;
+end;
+
+end.
